@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#07111f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>MT5 Monitor</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#07111f;color:#eef4ff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.app{max-width:520px;margin:auto;padding:18px 16px 95px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+h1{font-size:24px;margin:0}.sub{color:#8fa1b8;font-size:13px;margin-top:3px}.dot{width:10px;height:10px;border-radius:50%;background:#36d399;display:inline-block;margin-right:7px;box-shadow:0 0 12px #36d399}
+.card{background:#0d1a2b;border:1px solid #172941;border-radius:18px;padding:16px;margin:12px 0;box-shadow:0 8px 30px #0003}.row{display:flex;justify-content:space-between;gap:10px}.muted{color:#8fa1b8}.price{font-size:31px;font-weight:750;margin:5px 0}.badge{padding:7px 10px;border-radius:10px;font-size:12px;font-weight:700}.buy{background:#0d4d3c;color:#58e0ae}.sell{background:#562538;color:#ff7c9d}.be{background:#4a3a0d;color:#ffd66b}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.metric{background:#091525;border-radius:13px;padding:12px}.metric b{display:block;font-size:19px;margin-top:4px}.chart{height:135px;display:flex;align-items:flex-end;gap:5px;padding:10px 3px}.bar{flex:1;border-radius:5px 5px 2px 2px;background:#2c8cff;opacity:.8}.bar:nth-child(odd){height:55%}.bar:nth-child(2n){height:78%}.bar:nth-child(3n){height:42%}.nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(520px,100%);background:#091625ee;backdrop-filter:blur(14px);border-top:1px solid #1b2d45;display:flex;justify-content:space-around;padding:12px 8px calc(12px + env(safe-area-inset-bottom));color:#8192a8;font-size:12px}.nav .active{color:#fff}.nav div{text-align:center}.signal{display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid #172941}.signal:last-child{border-bottom:0}.circle{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-weight:800}.cgreen{background:#0d4d3c;color:#58e0ae}.cred{background:#562538;color:#ff7c9d}.cyellow{background:#4a3a0d;color:#ffd66b}
+</style>
+</head>
+<body>
+<main class="app">
+  <div class="top">
+    <div><h1>MT5 Monitor</h1><div class="sub"><span class="dot"></span>MT5 collegato</div></div>
+    <div class="badge buy">XAUUSD · M15</div>
+  </div>
+
+  <section class="card">
+    <div class="row"><div class="muted">XAUUSD</div><div class="muted">LIVE</div></div>
+    <div class="price">3.945,20</div>
+    <div class="row"><span class="muted">Ultimo aggiornamento 17:32</span><span class="badge buy">LONG ATTIVO</span></div>
+  </section>
+
+  <section class="card">
+    <div class="row"><b>Operazione attuale</b><span class="badge buy">BUY</span></div>
+    <div class="grid" style="margin-top:12px">
+      <div class="metric"><span class="muted">Entrata</span><b>3.942,80</b></div>
+      <div class="metric"><span class="muted">Profitto</span><b>+€24,00</b></div>
+      <div class="metric"><span class="muted">BE</span><b>Attivo</b></div>
+      <div class="metric"><span class="muted">Stato</span><b>Protetto</b></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="row"><b>Andamento</b><span class="muted">M15</span></div>
+    <div class="chart">
+      <i class="bar" style="height:45%"></i><i class="bar" style="height:62%"></i><i class="bar" style="height:50%"></i>
+      <i class="bar" style="height:72%"></i><i class="bar" style="height:60%"></i><i class="bar" style="height:82%"></i>
+      <i class="bar" style="height:70%"></i><i class="bar" style="height:90%"></i><i class="bar" style="height:78%"></i>
+      <i class="bar" style="height:96%"></i><i class="bar" style="height:88%"></i><i class="bar" style="height:100%"></i>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="row"><b>Statistiche</b><span class="muted">Oggi</span></div>
+    <div class="grid" style="margin-top:12px">
+      <div class="metric"><span class="muted">Vincenti</span><b>7</b></div>
+      <div class="metric"><span class="muted">Perdenti</span><b>3</b></div>
+      <div class="metric"><span class="muted">BE</span><b>2</b></div>
+      <div class="metric"><span class="muted">Risultato</span><b>+€86</b></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="row"><b>Ultimi segnali</b><span class="muted">Tutti</span></div>
+    <div class="signal"><div class="circle cgreen">↑</div><div style="flex:1"><b>LONG XAUUSD</b><div class="muted">17:32 · 3.942,80 · M15</div></div><span class="badge buy">ATTIVO</span></div>
+    <div class="signal"><div class="circle cyellow">=</div><div style="flex:1"><b>BE</b><div class="muted">17:18 · protezione attivata</div></div><span class="muted">+€0</span></div>
+    <div class="signal"><div class="circle cred">↓</div><div style="flex:1"><b>SELL XAUUSD</b><div class="muted">16:42 · 3.938,10 · M15</div></div><span class="muted">+€31</span></div>
+  </section>
+</main>
+<nav class="nav"><div class="active">⌂<br>Home</div><div>◉<br>Segnali</div><div>▣<br>Operazioni</div><div>☷<br>Statistiche</div></nav>
+</body>
+</html>
